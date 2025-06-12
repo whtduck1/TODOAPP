@@ -1,1 +1,18 @@
-<p>todolist works!</p>
+<div class="todo-container">
+  <h2>Twoje zadania</h2>
+
+  <form (submit)="addTodo()">
+    <input type="text" [(ngModel)]="newTask" name="task" placeholder="Dodaj nowe zadanie" required />
+    <button type="submit">Dodaj</button>
+  </form>
+
+  <ul>
+    <li *ngFor="let todo of todos">
+      <label>
+        <input type="checkbox" [checked]="todo.status" (change)="toggleStatus(todo)" />
+        <span [class.done]="todo.status">{{ todo.task }}</span>
+      </label>
+      <button (click)="deleteTodo(todo.id)">Usuń</button>
+    </li>
+  </ul>
+</div>

@@ -1,9 +1,31 @@
-{"user": [
-  {
-    "name": "Mati",
-    "email": "Mati@gmail.com",
-    "phone": "123123123",
-    "password": "password",
-    "id": 1
-  }]
+{
+  "user": [
+    {
+      "name": "Mati",
+      "email": "Mati@gmail.com",
+      "phone": "123123123",
+      "password": "password",
+      "id": "1"
+    }
+  ],
+  "todo": [
+    {
+      "id": "2",
+      "userId": 1,
+      "task": "Posprzataj Angulara",
+      "status": false
+    },
+    {
+      "userId": "1",
+      "task": "Cos nowego",
+      "status": false,
+      "id": "Wj1LrOR"
+    },
+    {
+      "userId": "1",
+      "task": "d",
+      "status": false,
+      "id": "E2KBumF"
+    }
+  ]
 }
