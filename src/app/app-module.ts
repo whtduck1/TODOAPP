@@ -10,6 +10,11 @@ import { Todoitems } from './components/todo/todoitems/todoitems';
 import { Todolist } from './components/todo/todolist/todolist';
 import { Login } from './components/user/login/login';
 import { Signup } from './components/user/signup/signup';
+import {HttpClientModule} from '@angular/common/http';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {ToastrModule} from 'ngx-toastr';
+// import {Ng2SearchPipeModule} from 'ng2-search-filter';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -24,7 +29,19 @@ import { Signup } from './components/user/signup/signup';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    // Ng2SearchPipeModule,
+    NgxPaginationModule,
+
+    ToastrModule.forRoot({
+      positionClass: 'toast-bottom-center',
+      closeButton: true,
+      progressBar: false,
+      preventDuplicates: true,
+    })
   ],
   providers: [
     provideBrowserGlobalErrorListeners()
