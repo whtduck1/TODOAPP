@@ -1,1 +1,17 @@
-<p>login works!</p>
+<div class="login-page">
+  <div class="login-grid">
+    <div class="login-text">
+      <h1>Plan? Brzmi dobrze.</h1>
+      <p>Zorganizuj swój dzień z klasą. Dodawaj, edytuj i kontroluj swoje zadania.</p>
+    </div>
+
+    <div class="login-box">
+      <h2>Logowanie</h2>
+      <form (ngSubmit)="onLogin()">
+        <input type="email" [(ngModel)]="email" name="email" placeholder="Email" required />
+        <input type="password" [(ngModel)]="password" name="password" placeholder="Hasło" required />
+        <button type="submit">Zaloguj się</button>
+      </form>
+    </div>
+  </div>
+</div>

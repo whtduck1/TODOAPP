@@ -8,12 +8,12 @@ import {Networkerror} from './components/others/networkerror/networkerror';
 import {AuthGuard} from './auth/auth-guard';
 
 const routes: Routes = [
-  {path: '', redirectTo: '/login', pathMatch: 'full'},
-  {path: 'todo', component: Todolist,  canActivate: [AuthGuard] },
-  {path: 'login', component: Login},
-  {path: 'signup', component: Signup},
-  {path: 'network-error', component: Networkerror},
-  {path: '**', component: Login}
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: 'login', component: Login },
+  { path: 'signup', component: Signup },
+  { path: 'todo', component: Todolist, canActivate: [AuthGuard] },
+  { path: 'network-error', component: Networkerror },
+  { path: '**', component: Notfound }
 ];
 
 @NgModule({

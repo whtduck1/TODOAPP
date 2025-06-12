@@ -8,12 +8,13 @@ import {catchError, map, Observable, of} from 'rxjs';
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = 'http://localhost:3001/user';
+  private apiUrl = 'http://localhost:3000/user';
   private currUser: User | null = null;
   constructor(private router: Router, private http: HttpClient) { }
 
 
   login(email: string, password: string): Observable<boolean> {
+    console.log('AuthService.login() wywołany');
     return this.http.get<User[]>(`${this.apiUrl}?email=${email}&password=${password}`).pipe(
       map(users => {
         if (users.length > 0) {
@@ -26,6 +27,7 @@ export class AuthService {
       catchError(() => of(false))
     );
   }
+
   logout(): void {
     this.currUser = null;
     localStorage.removeItem('user');
