@@ -1,1 +1,4 @@
-<p>todoform works!</p>
+<form (submit)="onSubmit()" class="form">
+  <input type="text" [(ngModel)]="task" name="task" placeholder="Dodaj zadanie" required />
+  <button type="submit">Dodaj</button>
+</form>

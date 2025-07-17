@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Todo} from '../../shared/todo';
 import {TodoService} from '../../../services/todo';
 import {AuthService} from '../../../services/authservice';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-todolist',
@@ -10,10 +11,8 @@ import {AuthService} from '../../../services/authservice';
   styleUrl: './todolist.scss'
 })
 
-  export class Todolist implements OnInit {
+export class Todolist implements OnInit {
   todos: Todo[] = [];
-  newTask = '';
-  todoList: Todo[] = [];
 
   constructor(private todoService: TodoService, private authService: AuthService) {}
 
@@ -30,19 +29,17 @@ import {AuthService} from '../../../services/authservice';
     });
   }
 
-  addTodo(): void {
+  addTodoFromChild(task: string): void {
     const userId = this.authService.userId;
-    if (!this.newTask.trim() || !userId) return;
+    if (!task || !userId) return;
 
     const newTodo: Omit<Todo, 'id'> = {
       userId: +userId,
-      task: this.newTask.trim(),
+      task,
       status: false
     };
 
-
     this.todoService.addTodo(newTodo).subscribe(() => {
-      this.newTask = '';
       this.loadTodos();
     });
   }
@@ -60,10 +57,6 @@ import {AuthService} from '../../../services/authservice';
     this.todoService.deleteTodo(id).subscribe(() => {
       this.todos = this.todos.filter(t => t.id !== id);
     });
-  }
-
-  logout(): void {
-    this.authService.logout();
   }
 }
 

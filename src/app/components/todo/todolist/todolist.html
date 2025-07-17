@@ -1,19 +1,14 @@
 <div class="todo-container">
   <h2>Twoje zadania</h2>
 
-  <form (submit)="addTodo()">
-    <input type="text" [(ngModel)]="newTask" name="task" placeholder="Dodaj nowe zadanie" required />
-    <button type="submit">Dodaj</button>
-  </form>
+  <app-todoform (add)="addTodoFromChild($event)"></app-todoform>
 
-  <div *ngFor="let t of todos">
+  <div class="todo-list">
     <app-todoitems
+      *ngFor="let t of todos"
       [todo]="t"
       (toggle)="toggleStatus(t)"
       (remove)="deleteTodo(t.id)"
     ></app-todoitems>
-  </div>
-  <div class="logout-container">
-    <button (click)="logout()">Wyloguj</button>
   </div>
 </div>

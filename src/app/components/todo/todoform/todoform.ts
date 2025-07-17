@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
 
 @Component({
   selector: 'app-todoform',
@@ -7,5 +7,14 @@ import { Component } from '@angular/core';
   styleUrl: './todoform.scss'
 })
 export class Todoform {
+  task = '';
 
+  @Output() add = new EventEmitter<string>();
+
+  onSubmit() {
+    if (this.task.trim()) {
+      this.add.emit(this.task.trim());
+      this.task = '';
+    }
+  }
 }
