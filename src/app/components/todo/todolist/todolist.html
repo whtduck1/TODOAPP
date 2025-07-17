@@ -6,13 +6,14 @@
     <button type="submit">Dodaj</button>
   </form>
 
-  <ul>
-    <li *ngFor="let todo of todos">
-      <label>
-        <input type="checkbox" [checked]="todo.status" (change)="toggleStatus(todo)" />
-        <span [class.done]="todo.status">{{ todo.task }}</span>
-      </label>
-      <button (click)="deleteTodo(todo.id)">Usuń</button>
-    </li>
-  </ul>
+  <div *ngFor="let t of todos">
+    <app-todoitems
+      [todo]="t"
+      (toggle)="toggleStatus(t)"
+      (remove)="deleteTodo(t.id)"
+    ></app-todoitems>
+  </div>
+  <div class="logout-container">
+    <button (click)="logout()">Wyloguj</button>
+  </div>
 </div>

@@ -1,1 +1,9 @@
-<p>todoitems works!</p>
+<div class="todo-card">
+  <div class="todo-content">
+    <input type="checkbox" [checked]="todo.status" (change)="toggle.emit()" />
+    <span [class.done]="todo.status">{{ todo.task }}</span>
+  </div>
+  <button class="delete-btn" (click)="remove.emit()">
+    <i class="fa-solid fa-trash"></i>
+  </button>
+</div>

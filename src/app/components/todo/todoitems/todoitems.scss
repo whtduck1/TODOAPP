@@ -1,0 +1,52 @@
+.todo-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  padding: 16px 20px;
+  border-radius: 16px;
+  margin-bottom: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+}
+
+.todo-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #5C5F8A;
+  }
+
+  .done {
+    text-decoration: line-through;
+    opacity: 0.5;
+  }
+}
+
+.delete-btn {
+  background: none;
+  border: none;
+  color: #5C5F8A;
+  font-size: 1.4rem;
+  cursor: pointer;
+  opacity: 1;
+  transition: transform 0.2s ease, color 0.2s ease;
+
+  &:hover {
+    transform: scale(1.15);
+    color: #ff3b3b;
+  }
+
+  i {
+    pointer-events: none;
+  }
+}

@@ -10,22 +10,10 @@
   ],
   "todo": [
     {
-      "id": "2",
       "userId": 1,
-      "task": "Posprzataj Angulara",
-      "status": false
-    },
-    {
-      "userId": "1",
-      "task": "Cos nowego",
+      "task": "Jazda",
       "status": false,
-      "id": "Wj1LrOR"
-    },
-    {
-      "userId": "1",
-      "task": "d",
-      "status": false,
-      "id": "E2KBumF"
+      "id": 7
     }
   ]
 }
