@@ -21,6 +21,33 @@
   }
 }
 
+.feedback {
+  padding: 12px 20px;
+  margin-bottom: 16px;
+  border-radius: 12px;
+  font-weight: 600;
+  text-align: center;
+  animation: fadeInOut 3s ease forwards;
+
+  &.success {
+    background: #A2E994;
+    background: radial-gradient(circle, rgba(162, 233, 148, 1) 0%, rgba(174, 238, 181, 1) 100%);
+    color: white;
+  }
+
+  &.error {
+    background: #fee2e2;
+    color: #991b1b;
+  }
+}
+
+@keyframes fadeInOut {
+  0%   { opacity: 0; transform: translateY(-10px); }
+  10%  { opacity: 1; transform: translateY(0); }
+  90%  { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-10px); }
+}
+
 @media (max-width: 768px) {
   .todo-container {
     padding: 24px 16px;

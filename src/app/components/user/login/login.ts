@@ -12,15 +12,20 @@ export class Login {
   email = '';
   password = '';
   loginFailed = false;
+  loading = false;
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(private authService: AuthService, private router: Router) {
+  }
 
-  onLogin(){
-    console.log('Próba logowania:', this.email, this.password);
+
+  onLogin() {
+    this.loading = true;
     this.authService.login(this.email, this.password).subscribe(success => {
-      if(success) {
+      this.loading = false;
+
+      if (success) {
         this.router.navigate(['/todo']);
-      }else{
+      } else {
         this.loginFailed = true;
       }
     });

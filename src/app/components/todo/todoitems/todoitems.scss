@@ -50,3 +50,54 @@
     pointer-events: none;
   }
 }
+
+.edit-btn {
+  background: none;
+  border: none;
+  color: #5C5F8A;
+  font-size: 1.4rem;
+  cursor: pointer;
+  opacity: 1;
+  transition: transform 0.2s ease, color 0.2s ease;
+  margin-right: 12px;
+
+  &:hover {
+    transform: scale(1.15);
+    color: #36a11e;
+  }
+
+  i {
+    pointer-events: none;
+  }
+}
+.edit-input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 1rem;
+  border: none;
+  background: rgba(255, 255, 255, 0.9);
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #a78bfa;
+  }
+}
+.cancel-btn{
+  background: none;
+  border: none;
+  color: #000000;
+  font-size: 1.4rem;
+  cursor: pointer;
+  opacity: 1;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+.task-content {
+  flex: 1;
+  cursor: pointer;
+}
+
+.done {
+  text-decoration: line-through;
+  opacity: 0.6;
+}

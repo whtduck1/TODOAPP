@@ -11,15 +11,15 @@
   "todo": [
     {
       "userId": 1,
-      "task": "Jazda",
-      "status": false,
-      "id": 7
+      "task": "123",
+      "status": true,
+      "id": 1
     },
     {
       "userId": 1,
-      "task": "Nowe zadanie dwa",
-      "status": false,
-      "id": 8
+      "task": "Zadanie 1",
+      "status": true,
+      "id": 2
     }
   ]
 }

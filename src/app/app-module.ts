@@ -15,6 +15,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {ToastrModule} from 'ngx-toastr';
 // import {Ng2SearchPipeModule} from 'ng2-search-filter';
 import {NgxPaginationModule} from 'ngx-pagination';
+import { Loader } from './components/shared/loader/loader';
+import {MatProgressSpinner} from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import {NgxPaginationModule} from 'ngx-pagination';
     Todoitems,
     Todolist,
     Login,
-    Signup
+    Signup,
+    Loader
   ],
   imports: [
     BrowserModule,
@@ -41,7 +44,8 @@ import {NgxPaginationModule} from 'ngx-pagination';
       closeButton: true,
       progressBar: false,
       preventDuplicates: true,
-    })
+    }),
+    MatProgressSpinner
   ],
   providers: [
     provideBrowserGlobalErrorListeners()

@@ -1,9 +1,31 @@
 <div class="todo-card">
   <div class="todo-content">
-    <input type="checkbox" [checked]="todo.status" (change)="toggle.emit()" />
-    <span [class.done]="todo.status">{{ todo.task }}</span>
+    <input type="checkbox" [checked]="todo.status" (change)="toggle.emit(todo)" />
+
+    <ng-container *ngIf="!editing; else editMode">
+      <span [class.done]="todo.status">{{ todo.task }}</span>
+    </ng-container>
+
+    <ng-template #editMode>
+      <input
+        type="text"
+        [(ngModel)]="editedTask"
+        (keydown.enter)="confirmEdit()"
+        (blur)="confirmEdit()"
+        class="edit-input"
+      />
+      <button class="cancel-btn" (click)="cancelEdit()">
+        <i class="fa-solid fa-check"></i>
+      </button>
+    </ng-template>
   </div>
-  <button class="delete-btn" (click)="remove.emit()">
-    <i class="fa-solid fa-trash"></i>
-  </button>
+
+  <div class="todo-actions">
+    <button class="edit-btn" (click)="startEdit()">
+      <i class="fa-solid fa-pen"></i>
+    </button>
+    <button class="delete-btn" (click)="remove.emit(todo.id)">
+      <i class="fa-solid fa-trash"></i>
+    </button>
+  </div>
 </div>

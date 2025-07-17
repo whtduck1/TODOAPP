@@ -3,12 +3,18 @@
 
   <app-todoform (add)="addTodoFromChild($event)"></app-todoform>
 
+  <div *ngIf="feedbackMessage" [ngClass]="['feedback', feedbackType]">
+    {{ feedbackMessage }}
+  </div>
+
   <div class="todo-list">
     <app-todoitems
       *ngFor="let t of todos"
       [todo]="t"
       (toggle)="toggleStatus(t)"
       (remove)="deleteTodo(t.id)"
+      (update)="updateTodo(t, $event)"
     ></app-todoitems>
   </div>
 </div>
+<app-loader [visible]="loading"></app-loader>
