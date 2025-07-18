@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Todo } from '../../shared/todo';
 import { TodoService } from '../../../services/todo';
 import { AuthService } from '../../../services/authservice';
@@ -10,6 +10,8 @@ import { AuthService } from '../../../services/authservice';
   styleUrl: './todolist.scss'
 })
 export class Todolist implements OnInit {
+  @Input() selectedDate: string = '';
+
   todos: Todo[] = [];
   loading = false;
 
@@ -25,14 +27,20 @@ export class Todolist implements OnInit {
     this.loadTodos();
   }
 
+  ngOnChanges(): void {
+    this.loadTodos();
+  }
+
   loadTodos(): void {
     const userId = this.authService.userId;
     if (!userId) return;
 
     this.loading = true;
+
     this.todoService.getTodos().subscribe({
       next: data => {
-        this.todos = data.filter(todo => +todo.userId === +userId);
+        this.todos = data
+          .filter(todo => +todo.userId === +userId && todo.date === this.selectedDate);
         this.loading = false;
       },
       error: () => {
@@ -49,7 +57,8 @@ export class Todolist implements OnInit {
     const newTodo: Omit<Todo, 'id'> = {
       userId: +userId,
       task: task.trim(),
-      status: false
+      status: false,
+      date: this.selectedDate
     };
 
     this.loading = true;

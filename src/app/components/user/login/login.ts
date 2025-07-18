@@ -24,7 +24,7 @@ export class Login {
       this.loading = false;
 
       if (success) {
-        this.router.navigate(['/todo']);
+        this.router.navigate(['/week-view']);
       } else {
         this.loginFailed = true;
       }

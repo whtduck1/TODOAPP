@@ -1,0 +1,57 @@
+.tabs-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(8px);
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.day-tab {
+  flex: 1;
+  margin: 0 4px;
+  padding: 8px 0;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.12);
+  color: #5C5F8A;
+  font-weight: 500;
+  font-size: 0.8rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.04);
+  }
+
+  &.active {
+    background: linear-gradient(135deg, rgba(142, 45, 226, 0.4), rgba(74, 0, 224, 0.4));
+    color: #fff;
+    font-weight: 600;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+  }
+
+  .day-name {
+    text-transform: uppercase;
+    margin-bottom: 2px;
+    font-size: 0.7rem;
+    opacity: 0.85;
+  }
+
+  .date {
+    font-size: 0.75rem;
+    opacity: 0.9;
+  }
+}
