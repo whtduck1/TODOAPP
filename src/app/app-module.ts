@@ -17,6 +17,9 @@ import {ToastrModule} from 'ngx-toastr';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { Loader } from './components/shared/loader/loader';
 import {MatProgressSpinner} from '@angular/material/progress-spinner';
+import { WeekView } from './components/week-view/week-view';
+import { DayTabs } from './components/day-tabs/day-tabs';
+import {NgCircleProgressModule} from 'ng-circle-progress';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,9 @@ import {MatProgressSpinner} from '@angular/material/progress-spinner';
     Todolist,
     Login,
     Signup,
-    Loader
+    Loader,
+    WeekView,
+    DayTabs,
   ],
   imports: [
     BrowserModule,
@@ -38,6 +43,7 @@ import {MatProgressSpinner} from '@angular/material/progress-spinner';
     ReactiveFormsModule,
     // Ng2SearchPipeModule,
     NgxPaginationModule,
+    NgCircleProgressModule.forRoot(),
 
     ToastrModule.forRoot({
       positionClass: 'toast-bottom-center',

@@ -18,6 +18,8 @@ export class Todolist implements OnInit {
   feedbackMessage = '';
   feedbackType: 'success' | 'error' | '' = '';
 
+  private lastDate = '';
+
   constructor(
     private todoService: TodoService,
     private authService: AuthService
@@ -28,7 +30,10 @@ export class Todolist implements OnInit {
   }
 
   ngOnChanges(): void {
-    this.loadTodos();
+    if (this.selectedDate !== this.lastDate) {
+      this.lastDate = this.selectedDate;
+      this.loadTodos();
+    }
   }
 
   loadTodos(): void {
@@ -76,16 +81,21 @@ export class Todolist implements OnInit {
 
   toggleStatus(todo: Todo): void {
     if (todo.id === undefined) return;
-
+    const updatedTodo = { ...todo, status: !todo.status };
     this.loading = true;
-    todo.status = !todo.status;
-    this.todoService.updateTodo(todo).subscribe({
+    this.todoService.updateTodo(updatedTodo).subscribe({
       next: () => {
-        this.loading = false;
+        const index = this.todos.findIndex(t => t.id === todo.id);
+        if (index !== -1) {
+          this.todos[index].status = updatedTodo.status;
+        }
+        setTimeout(() => {
+          this.loading = false;
+        }, 370);
       },
       error: () => {
         this.loading = false;
-        this.showFeedback('❌ Błąd przy zapisie statusu', 'error');
+        this.showFeedback('❌ Nie udało się zaktualizować statusu', 'error');
       }
     });
   }
@@ -132,5 +142,17 @@ export class Todolist implements OnInit {
       this.feedbackMessage = '';
       this.feedbackType = '';
     }, 3000);
+  }
+
+  get completedPercentage():number{
+    const total = this.todos.length;
+    const completed = this.todos.filter(t => t.status).length;
+    return total === 0 ? 0 : Math.round((completed / total) * 100);
+  }
+
+  get productivitySubtitle(): string {
+    const completed = this.todos.filter(t => t.status).length;
+    const total = this.todos.length;
+    return `${completed}/${total} zadań`;
   }
 }

@@ -11,15 +11,129 @@
   "todo": [
     {
       "userId": 1,
-      "task": "123",
-      "status": true,
-      "id": 1
+      "task": "Zadanie 1 Poniedzialek",
+      "status": false,
+      "date": "2025-07-14",
+      "id": 3
     },
     {
       "userId": 1,
-      "task": "Zadanie 1",
+      "task": "Zadanie 2 Wtorek",
+      "status": false,
+      "date": "2025-07-15",
+      "id": 4
+    },
+    {
+      "userId": 1,
+      "task": "Zadanie 3 Środa",
       "status": true,
-      "id": 2
+      "date": "2025-07-16",
+      "id": 5
+    },
+    {
+      "userId": 1,
+      "task": "Zadanie 4 Czwartek",
+      "status": false,
+      "date": "2025-07-17",
+      "id": 6
+    },
+    {
+      "userId": 1,
+      "task": "Zadanie 6 Sobota",
+      "status": false,
+      "date": "2025-07-19",
+      "id": 8
+    },
+    {
+      "userId": 1,
+      "task": "Zadanie 2 Poniedzialek",
+      "status": false,
+      "date": "2025-07-14",
+      "id": 10
+    },
+    {
+      "userId": 1,
+      "task": "Zadanie 3 Poniedzialek",
+      "status": false,
+      "date": "2025-07-14",
+      "id": 11
+    },
+    {
+      "userId": 1,
+      "task": "Zadanie 2 Wtorek",
+      "status": false,
+      "date": "2025-07-15",
+      "id": 12
+    },
+    {
+      "userId": 1,
+      "task": "Zadanie 3 Wtorek",
+      "status": false,
+      "date": "2025-07-15",
+      "id": 13
+    },
+    {
+      "userId": 1,
+      "task": "Zadanie 2 Środa",
+      "status": false,
+      "date": "2025-07-16",
+      "id": 14
+    },
+    {
+      "userId": 1,
+      "task": "Zadanie 3 Środa",
+      "status": true,
+      "date": "2025-07-16",
+      "id": 15
+    },
+    {
+      "userId": 1,
+      "task": "Zadanie 2 Niedziela",
+      "status": true,
+      "date": "2025-07-20",
+      "id": 17
+    },
+    {
+      "userId": 1,
+      "task": "Zadanie 3 Niedziela",
+      "status": true,
+      "date": "2025-07-20",
+      "id": 18
+    },
+    {
+      "userId": 1,
+      "task": "Zadanie 4 Niedziela",
+      "status": false,
+      "date": "2025-07-20",
+      "id": 19
+    },
+    {
+      "userId": 1,
+      "task": "Zadanie 12 Niedziela",
+      "status": true,
+      "date": "2025-07-20",
+      "id": 20
+    },
+    {
+      "userId": 1,
+      "task": "Zadanie 2",
+      "status": false,
+      "date": "2025-07-18",
+      "id": 22
+    },
+    {
+      "userId": 1,
+      "task": "Zadanie 4",
+      "status": false,
+      "date": "2025-07-18",
+      "id": 23
+    },
+    {
+      "userId": 1,
+      "task": "Zadanie 2 Wtorek",
+      "status": true,
+      "date": "2025-07-18",
+      "id": 24
     }
   ]
 }

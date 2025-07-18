@@ -17,4 +17,26 @@
     ></app-todoitems>
   </div>
 </div>
+<div class="progress-container">
+  <h3>Twoja produktywność</h3>
+  <circle-progress
+    [percent]="completedPercentage"
+    [radius]="60"
+    [outerStrokeWidth]="10"
+    [outerStrokeColor]="completedPercentage === 100 ? '#77dd77' : '#a78bfa'"
+    [title]="completedPercentage + '%'"
+    [titleColor]="'#5C5F8A'"
+    [titleFontSize]="'20'"
+    [subtitle]="productivitySubtitle"
+    [showTitle]="true"
+    [animation]="true"
+    [showUnits]="false"
+    [animationDuration]="300"
+    [showSubtitle]="false"
+    [showBackground]="false"
+    [renderOnClick]="false"
+    [startFromZero]="false"
+    [showInnerStroke]="false">
+  </circle-progress>
+</div>
 <app-loader [visible]="loading"></app-loader>
